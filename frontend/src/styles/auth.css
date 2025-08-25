@@ -1,0 +1,108 @@
+@import './theme.css';
+
+/* Auth pages styling */
+.auth-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 1rem;
+  background:var(--bg);
+}
+
+.auth-card{
+  width:100%;
+  max-width:520px;
+  background:linear-gradient(180deg, var(--surface), rgba(255,255,255,0.02));
+  border-radius:var(--card-radius);
+  box-shadow:var(--shadow-1);
+  padding:1.25rem;
+  box-sizing:border-box;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.auth-title{
+  margin:0 0 0.25rem 0;
+  font-size:1.25rem;
+}
+.auth-sub{
+  margin:0 0 1rem 0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+.auth-form{
+  display:flex;
+  flex-direction:column;
+  gap:0.75rem;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:0.35rem;
+  text-align:left;
+}
+
+.field .label{
+  font-size:0.85rem;
+  color:var(--muted);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  padding:0.75rem 0.9rem;
+  border-radius:8px;
+  border:1px solid rgba(15,20,30,0.06);
+  background:transparent;
+  color:var(--text);
+  outline:none;
+  box-shadow:none;
+  transition:box-shadow 180ms, border-color 180ms;
+}
+input::placeholder{ color: rgba(82,93,112,0.5) }
+input:focus{ box-shadow:0 6px 18px rgba(79,70,229,0.06); border-color:var(--primary) }
+
+.btn{
+  padding:0.75rem 1rem;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn.primary{
+  background:var(--primary);
+  color:var(--primary-contrast);
+  box-shadow:var(--shadow-1);
+}
+
+.auth-foot{
+  margin-top:0.5rem;
+  text-align:center;
+  font-size:0.9rem;
+}
+.auth-foot a{ color:var(--primary); text-decoration:none }
+
+/* grid for name fields on larger screens */
+.grid{
+  display:block;
+}
+@media(min-width:520px){
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0.75rem;
+  }
+}
+
+/* subtle responsiveness for card */
+@media (min-width:720px){
+  .auth-card{ padding:1.75rem; }
+}
+
+/* Dark theme tweaks */
+[data-theme="dark"] .auth-card{
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: var(--shadow-2);
+}
