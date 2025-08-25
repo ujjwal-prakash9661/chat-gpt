@@ -21,7 +21,7 @@ const Login = () => {
 
         console.log(form);
 
-        axios.post("http://localhost:3000/api/auth/login", {
+        axios.post("https://chat-gpt-clone-05c0.onrender.com/api/auth/login", {
             email: form.email,
             password: form.password
         },
